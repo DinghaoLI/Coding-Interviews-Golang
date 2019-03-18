@@ -1,5 +1,15 @@
 # 剑指Offer - Golang实现
 
+若题目对应包内有 \*\_test.go 文件，可直接执行go test进行单元测试
+```shell
+go test
+```
+
+若没有test文件，请直接执行
+```shell
+go run problemXXX.go
+```
+
 | 题目      | 
 | ---------- | 
 | [003-二维数组中的查找](https://github.com/DinghaoLI/Coding-Interviews-Golang/tree/master/003-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE) |
@@ -65,7 +75,7 @@
 | [063-二叉搜索树的第K个结点](https://github.com/DinghaoLI/Coding-Interviews-Golang/tree/master/063-%e4%ba%8c%e5%8f%89%e6%90%9c%e7%b4%a2%e6%a0%91%e7%9a%84%e7%ac%acK%e4%b8%aa%e7%bb%93%e7%82%b9) |
 | [064-数据流之中的中位数](https://github.com/DinghaoLI/Coding-Interviews-Golang/tree/master/064-%e6%95%b0%e6%8d%ae%e6%b5%81%e4%b9%8b%e4%b8%ad%e7%9a%84%e4%b8%ad%e4%bd%8d%e6%95%b0) |
 | [065-滑动窗口的最大值](https://github.com/DinghaoLI/Coding-Interviews-Golang/tree/master/065-%e6%bb%91%e5%8a%a8%e7%aa%97%e5%8f%a3%e7%9a%84%e6%9c%80%e5%a4%a7%e5%80%bc) |
-| 
+
 
 
 如有错误或者更好的版本，欢迎提交意见
