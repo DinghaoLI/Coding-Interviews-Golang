@@ -38,13 +38,14 @@ func reConstructBinaryTree(pre []int, in []int) *TreeNode {
 			rootIndex = i
 		}
 	}
+	// pre and in for left and right 
 	inL, inR := in[:rootIndex], in[rootIndex+1:]
 	preL, preR := pre[1:rootIndex+1], pre[rootIndex+1:]
+	// revursive
 	left := reConstructBinaryTree(preL, inL)
 	right := reConstructBinaryTree(preR, inR)
 	return &TreeNode{Val: rootVal, Left: left, Right: right}
 }
-
 
 
 func main() {
@@ -67,8 +68,6 @@ func main() {
 	fmt.Printf("inOder from Tree reconstructed:  ")
 	printInOrder(root)
 	fmt.Printf("\n")
-
-
 }
 
 
