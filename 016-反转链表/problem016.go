@@ -12,23 +12,13 @@ type NodeList struct {
 func reverse(head *NodeList) *NodeList {
 	if head == nil || head.Next == nil { return head }
 	vide := &NodeList{-1, nil}
-	// first
-	vide.Next = head
-	next := head.Next
-	head.Next = nil
-	head = next
-	next = next.Next
-	// rest
-	for next != nil {
+
+	for head != nil {
+		next := head.Next
 		head.Next = vide.Next
 		vide.Next = head
 		head = next
-		next = next.Next
 	}
-
-	// last one 
-	head.Next = vide.Next
-	vide.Next = head
 
 	return vide.Next
 
