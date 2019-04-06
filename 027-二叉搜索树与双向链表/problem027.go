@@ -4,32 +4,34 @@ import (
 	"fmt"
 )
 
+
+
 type TreeNode struct {
-	Val  int
-	Left *TreeNode
-	Right *TreeNode
+	Val int
+    Left *TreeNode
+    Right *TreeNode
 }
 
-func TreeToList(root *TreeNode) (*TreeNode, *TreeNode) {
+func TreeToList(root *TreeNode) (*TreeNode, *TreeNode){
 	head, tail := root, root
-	if root == nil { return head, tail }
-	if root.Left == nil && root.Right == nil {
-		head.Left, tail.Right = root, root
-		return head, tail
-	}
-	if root.Left != nil {
-		leftHead, leftTail := TreeToList(root.Left)
-		head = leftHead
-		root.Left = leftTail
-		leftTail.Right = root
-	} 
-	if root.Right != nil {
-		rightHead, rightTail := TreeToList(root.Right)
+    if root == nil { return head, tail }
+    if root.Left == nil && root.Right == nil {
+    	head.Left, tail.Right = root, root
+        return head, tail
+    }
+  	if root.Left != nil {
+    	leftHead, leftTail := TreeToList(root.Left)
+        head = leftHead
+        root.Left = leftTail
+        leftTail.Right = root  
+    }
+    if root.Right != nil {
+    	rightHead, rightTail := TreeToList(root.Right)
 		tail = rightTail
-		root.Right = rightHead
-		rightHead.Left = root
-	}
-	head.Left, tail.Right = head, tail
+        root.Right = rightHead
+        rightHead.Left = root
+    }
+    head.Left, tail.Right = head, tail
 	return head, tail
 }
 

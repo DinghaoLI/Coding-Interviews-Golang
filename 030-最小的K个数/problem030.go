@@ -1,23 +1,41 @@
-package problem010
+package main
 
-import "errors"
+import (
+	"fmt"
+	"errors"
+	. "../utils"
+)
 
-func getMostFreq(nums []int) (int, error){
-	if len(nums) == 0 {
-		return -1, errors.New("Array is empty")
+func getMostFreq(nums []int, k int) ([]int, error){
+	res := []int{}
+	if k > len(nums) {
+		return res, errors.New("k > length of nums")
 	}
-	count := 1
-	value := nums[0]
-	for i := 1; i < len(nums); i++ {
-		if nums[i] == value {
-			count++
+
+	maxHeap := NewMaxHeap()
+
+	for _, v := range nums {
+		if maxHeap.Length() < k {
+			maxHeap.Insert(v)
 		} else {
-			count--
-			if count == 0 {
-				value = nums[i]
-				count = 1
+			max, _ := maxHeap.Max()
+			if max > v {
+				maxHeap.DeleteMax()
+				maxHeap.Insert(v)
 			}
 		}
 	}
-	return value, nil
+	for maxHeap.Length()>0 {
+		v, _ := maxHeap.DeleteMax()
+		res = append(res, v)
+	}
+	return res, nil
+}
+
+func main() {
+	test := []int{1,2,3,4,5,6,7,8,9}
+	fmt.Println(test)
+	fmt.Println(getMostFreq(test, 3))
+	fmt.Println(getMostFreq(test, 4))
+	fmt.Println(getMostFreq(test, 5))
 }
