@@ -1,5 +1,15 @@
 # 剑指Offer - Golang实现
 
+## 简介
+
+一直没找到完整版的剑指Offer的Golang实现，所以索性自己来写。
+
+每个文件夹对应每个题目，文件夹内的README.md内有题目和必要的分析，Problem\*.go 是和算法相对应的代码。
+
+如果大家使用的是Chrome，给推荐大家一个小插件：**[octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?hl=zh-CN)**，这是一个极其方便的github Repo索引小插件，真的很方便。
+
+## 运行代码
+
 若题目对应包内有 \*\_test.go 文件，可直接执行go test进行单元测试
 ```shell
 go test
@@ -9,6 +19,11 @@ go test
 ```shell
 go run problemXXX.go
 ```
+
+**如果文档里有说明该题目是LeetCode上原题，请点击内服的LeetCode题目链接，并复制代码到LeetCode上执行。**
+
+## 如有错误或者更好的算法版本，欢迎各种PR～
+
 
 | 题目      | 
 | ---------- | 
@@ -76,6 +91,3 @@ go run problemXXX.go
 | [064-数据流之中的中位数](https://github.com/DinghaoLI/Coding-Interviews-Golang/tree/master/064-%e6%95%b0%e6%8d%ae%e6%b5%81%e4%b9%8b%e4%b8%ad%e7%9a%84%e4%b8%ad%e4%bd%8d%e6%95%b0) |
 | [065-滑动窗口的最大值](https://github.com/DinghaoLI/Coding-Interviews-Golang/tree/master/065-%e6%bb%91%e5%8a%a8%e7%aa%97%e5%8f%a3%e7%9a%84%e6%9c%80%e5%a4%a7%e5%80%bc) |
 
-
-
-如有错误或者更好的版本，欢迎提交意见
