@@ -31,6 +31,14 @@ func (H *MaxHeap) Max() (int, error) {
 	return -1, fmt.Errorf("heap is empty")
 }
 
+// Get the Maximum of the Maxheap
+func (H *MaxHeap) GetMax() int {
+	if H.Length() > 0 {
+		return H.Element[1]
+	}
+	return math.MaxInt64
+}
+
 // Inserting items requires ensuring the nature of the Maxheap
 func (H *MaxHeap) Insert(v int) {
 	H.Element = append(H.Element, v)
