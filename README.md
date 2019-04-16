@@ -20,7 +20,7 @@ go test
 go run problemXXX.go
 ```
 
-**如果文档里有说明该题目是LeetCode上原题，请点击内服的LeetCode题目链接，并复制代码到LeetCode上执行。**
+**如果文档里有说明该题目是LeetCode上原题，请点击内附的LeetCode题目链接，并复制代码到LeetCode上执行。**
 
 ## 如有错误或者更好的算法版本，欢迎各种PR～
 
