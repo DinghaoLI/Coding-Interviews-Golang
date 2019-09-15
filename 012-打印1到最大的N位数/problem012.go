@@ -42,7 +42,7 @@ func PowNormal(base float64, exp int) float64 {
 func showN(n int) error {
     top, _ := Pow(10, n)
 
-    if (int(top) > MaxInt){
+    if (int(top) < 0){
         return errors.New("Overflow")
     }
 

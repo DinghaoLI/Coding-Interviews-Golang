@@ -6,7 +6,7 @@ import (
 	. "../utils"
 )
 
-func getMostFreq(nums []int, k int) ([]int, error){
+func minK(nums []int, k int) ([]int, error){
 	res := []int{}
 	if k > len(nums) {
 		return res, errors.New("k > length of nums")
@@ -35,7 +35,9 @@ func getMostFreq(nums []int, k int) ([]int, error){
 func main() {
 	test := []int{1,2,3,4,5,6,7,8,9}
 	fmt.Println(test)
-	fmt.Println(getMostFreq(test, 3))
-	fmt.Println(getMostFreq(test, 4))
-	fmt.Println(getMostFreq(test, 5))
+	fmt.Println(minK(test, 1))
+	fmt.Println(minK(test, 2))
+	fmt.Println(minK(test, 3))
+	fmt.Println(minK(test, 4))
+	fmt.Println(minK(test, 5))
 }

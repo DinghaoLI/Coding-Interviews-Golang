@@ -15,7 +15,6 @@ func getNext(node *TreeNode) *TreeNode {
 	if node == nil {
 		return node
 	}
-
 	//如果节点有右子树，那么它的下一个节点就是它的右子树中最左边的节点
 	if node.Right != nil {
 		node = node.Right
@@ -26,14 +25,16 @@ func getNext(node *TreeNode) *TreeNode {
 	}
 	// 先取目标的父节点
 	p := node.Parent
-	for p.Parent != nil {
-		// 如果p节点是p的父节点的又节点 =》 继续向上找
-		if p == p.Parent.Right {
+	n := node
+	for p != nil {
+		// 如果p节点是p的父节点的右节点 =》 继续向上找
+		if n == p.Right {
+			n = p
 			p = p.Parent
 			continue
 		}
-		// p是p父节点的子节点 =》 返回父节点
-		return p.Parent
+		// p是p父节点的左节点 =》 返回父节点
+		return p
 	}
 	// 目标节点没有下一个节点
 	return nil

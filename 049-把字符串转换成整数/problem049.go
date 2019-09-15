@@ -9,9 +9,11 @@ func myAtoi(str string) int {
 	res := 0
 	flag := 1
 	start := 0
+	// space
 	for start <= len(str)-1 && str[start] == ' ' {
 		start++
 	}
+	// +/-
 	if start <= len(str)-1 {
 		if str[start] == '-' {
 			flag = -1
@@ -20,15 +22,16 @@ func myAtoi(str string) int {
 			start++
 		}
 	}
+	// is digital ?
 	for start <= len(str)-1 && isDigital(str[start]) {
 		if res == 0 {
-			fmt.Println(int(str[start] - '0'))
 			res += int(str[start] - '0')
 			start++
 		} else {
 			res = res*10 + int((str[start] - '0'))
 			start++
 		}
+		// overflow int32
 		if res*flag > math.MaxInt32 {
 			return math.MaxInt32
 		} else if res*flag < math.MinInt32 {
