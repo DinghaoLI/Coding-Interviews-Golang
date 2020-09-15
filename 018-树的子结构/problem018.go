@@ -30,7 +30,7 @@ func hasSub(p *TreeNode, c *TreeNode) bool {
 	if p == nil { return false }
 
 	if p.Val != c.Val {
-		return true
+		return false
 	}
 
 	return hasSub(p.Left, c.Left) && hasSub(p.Right, c.Right)
@@ -44,7 +44,4 @@ func main() {
 	sub3 := &TreeNode{2, nil, nil}
 
 	fmt.Println(hasSubRootOrTree(root, sub1), hasSubRootOrTree(root, sub2), hasSubRootOrTree(root, sub3))
-
-
-
 }
