@@ -24,6 +24,16 @@ func reverse(head *NodeList) *NodeList {
 
 }
 
+func reverse1(head *NodeList) *NodeList {
+    if head == nil || head.Next == nil {
+        return head
+    }
+    newNode := reverse1(head.Next)
+    head.Next.Next = head
+    head.Next = nil
+    return newNode
+}
+
 func print(head *NodeList){
 	for head!=nil{
 		fmt.Printf("%d -> ", head.Val)
@@ -52,5 +62,17 @@ func main() {
 	fmt.Println("1 -> ")
 	print(reverse(l1))
 	fmt.Println("\n")
-
+    
+    fmt.Println("reverse1")
+    l1 = &NodeList{1, &NodeList{2, &NodeList{3, nil}}}
+    print(reverse1(l1))
+    fmt.Println()
+    l1 = &NodeList{1, &NodeList{2, nil}}
+    print(reverse1(l1))
+    fmt.Println()
+    l1 = &NodeList{1, nil}
+    print(reverse1(l1))
+    fmt.Println()
+    print(reverse1(nil))
+    fmt.Println()
 }
